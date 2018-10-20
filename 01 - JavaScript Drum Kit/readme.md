@@ -18,7 +18,7 @@ const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
 如何保证按键被按住不放时，可以马上响起连续鼓点声？
 每次播放音频之前，设置播放时间戳为 0：
 ```
-var audio = document.getElementById("video"); 
+const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
 audio.currentTime = 0;
 audio.play();
 ```
