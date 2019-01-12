@@ -6,7 +6,21 @@
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
+
+    
 <script>
+      const pressed = [],secretCode = 'helloworld'
+window.addEventListener('keyup', (e) => {
+  
+  pressed.push(e.key);
+  // 当pressed数组里面的字符个数大于密钥字符串的个数时，每新增一个字符，将最前面一个删掉
+  pressed.splice(0, pressed.length - secretCode.length);
+  // pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length); //截取数组
+  if (pressed.join('').includes(secretCode)) { //判断是否符合暗号
+	console.log('DING DING!');
+	cornify_add();
+}
+})
 </script>
 </body>
 </html>
